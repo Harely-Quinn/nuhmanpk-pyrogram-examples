@@ -1,5 +1,6 @@
 import os
 from pyrogram import Client, filters
+from pyrogram import Client, filtersfrom pyrogram.types
 from pyrogram.types import Message, User
 
 bughunter0 = Client(
@@ -14,4 +15,13 @@ async def edited(bot,message):
 	chatid= message.chat.id	
 	await bot.send_message(text=f"{message.from_user.mention} Edited This [Message]({message.link})",chat_id=chatid)
 	
+
+@bughunter0.on_message(filters.new_chat_members)
+async def welcome(bot,message):
+chatid= message.chat.id
+await bot.send_message(text=f"Welcome {message.from_user.mention} to {message.chat.username} , Happy to have here",chat_id=chatid)
+@bughunter0.on_message(filters.left_chat_member)
+Async def goodbye(bot,message):
+chatid = message.chat.id	await bot.send_message(text=f"Bye , {message.from_user.mention} , Have a Nice Day",chat_id=chatid)
+
 bughunter0.run()
