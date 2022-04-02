@@ -23,7 +23,15 @@ async def start(bot, update):
         f""" Hai {update.from_user.mention} am just a pyrogram example bot""", 
         disable_web_page_preview=True,
         reply_markup=START_BUTTON
-    
+    )
+
+@Bot.on_message(filters.private & filters.command(["love"]))
+async def start(bot, update):
+    await update.reply_sticker("CAACAgIAAxkBAAEIg3FiSJawE8qB_DosotXRQLGRQIzi_QAC8SQAAnQfywgLksg2NlGEmCME")
+    await update.reply_text(
+        f""" Hai {update.from_user.mention} am just a pyrogram example bot""", 
+        disable_web_page_preview=True,
+        reply_markup=START_BUTTON
     )
 
 Bot.run()
