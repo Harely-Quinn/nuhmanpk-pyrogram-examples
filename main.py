@@ -37,7 +37,7 @@ async def start(bot, update):
 @Bot.on_message(filters.command(["repo", "repo@Pyro_Tg_Bot"]) & filters.private)
 async def start(bot, update):
     await update.reply_text(
-        f"""<b>Hi {message.from_user.first_name} 😉️!</b>
+        f"""<b>Hi 😉️!</b>
 
 Kk Click On The Below Button For The Repo :)
 
