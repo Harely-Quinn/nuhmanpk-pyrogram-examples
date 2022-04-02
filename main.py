@@ -1,7 +1,7 @@
 import os
+import pyrogram
 from pyromod import listen
 from pyrogram import Client, filters
-
 
 Bot = Client(
     "Instant-Caption-Adder",
@@ -38,5 +38,14 @@ async def get_caption(bot, message):
     else:
         return caption.text
 
+@Bot.on_message(filters.regex("http") | filters.regex("www") | filters.regex("t.me"))
+async def nolink(bot,message):
+	try:
+		await message.delete()
+	except:
+		return
 
 Bot.run()
+
+
+ 	
