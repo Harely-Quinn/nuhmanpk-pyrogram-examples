@@ -35,7 +35,7 @@ async def start(bot, update):
     )
 
 @Bot.on_message(filters.command(["repo", "repo@Pyro_Tg_Bot"]) & filters.private)
-async def repo(bot, update):
+async def start(bot, update):
     await message.reply_text(
         f"""<b>Hi {message.from_user.first_name} 😉️!</b>
 
