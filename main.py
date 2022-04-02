@@ -23,7 +23,7 @@ async def start(bot, update):
         f""" Hai {update.from_user.mention} am just a pyrogram example bot""", 
         disable_web_page_preview=True,
         reply_markup=START_BUTTON
-        reply_to_message_id=message.message_id
+    
     )
 
 Bot.run()
