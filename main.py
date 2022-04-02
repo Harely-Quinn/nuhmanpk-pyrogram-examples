@@ -1,7 +1,7 @@
 import os
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 Bot = Client(
     "Pyrogram-example-bot",
     bot_token = os.environ["BOT_TOKEN"],
@@ -33,5 +33,27 @@ async def start(bot, update):
         disable_web_page_preview=True,
         reply_markup=START_BUTTON
     )
+
+@Bot.on_message(filters.command(["repo", "repo@Pyro_Tg_Bot"]) & filters.private)
+async def repo(_, message: Message):
+    await message.reply_text(
+        f"""<b>Hi {message.from_user.first_name} 😉️!</b>
+
+Kk Click On The Below Button For The Repo :)
+
+Made by **@Amalbiju154** for Noob/Beginners Like Him!
+
+Join **@NexaBotsUpdates**""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "Repo", url=""
+                    )
+                ]
+            ]
+        )
+    )
+
 
 Bot.run()
