@@ -2,7 +2,6 @@ import os
 import pyrogram
 from pyromod import listen
 from pyrogram import Client, filters
-from pyrogram.types import Message, User 
 
 Bot = Client(
     "Instant-Caption-Adder",
