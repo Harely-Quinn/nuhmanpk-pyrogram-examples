@@ -43,7 +43,13 @@ Kk Click On The Below Button For The Repo :)
 
 Made by **@Amalbiju154** for Noob/Beginners Like Him!
 
-Join **@NexaBotsUpdates**""",)
+Join **@NexaBotsUpdates**""")
+ reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "Repo", url="www.google.com"
+  )]])
 
 
 Bot.run()
