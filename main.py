@@ -94,7 +94,6 @@ keyboard = InlineKeyboardMarkup(
 #Start
 
 @Bot.on_message(filters.command("start"))
-@capture_err
 async def start(_, message):
     start_text=f"Hello {message.from_user.mention}, I am {BOT_NAME}\n\nMy Onwer is [{OWNER_ID}](tg://user?id={OWNER_ID})"
     await message.reply_text(start_text, reply_markup=keyboard, parse_mode="markdown")
